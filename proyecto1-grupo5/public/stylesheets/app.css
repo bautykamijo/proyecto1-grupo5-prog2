@@ -69,6 +69,7 @@ hr {
 .main-header {
   padding: 15px 0;
   background-color: rgb(198, 0, 76);
+  color: rgb(255, 255, 255);
 }
 
 .main-header_home-link,
