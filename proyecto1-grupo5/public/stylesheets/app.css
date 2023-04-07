@@ -29,7 +29,8 @@ body {
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 300;
-  background-color: var(--light-gray);
+  background-color: rgba(90,194,231,255);
+  color: rgba(17,17,31,255);
 }
 
 ul,
@@ -68,13 +69,17 @@ hr {
 /*====== Main Header ======*/
 .main-header {
   padding: 15px 0;
-  background-color: rgb(198, 0, 76);
+  background-color:rgba(17,17,31,255);
   color: rgb(255, 255, 255);
 }
 
 .main-header_home-link,
 .main-header_credit-link {
   display: block;
+}
+
+.azamfutbol{
+  width: 70%;
 }
 
 .main-header_credit-link {
@@ -155,10 +160,10 @@ hr {
 
 /*====== Banner ======*/
 .banner {
-  background-image: url(/images/img-home-banner.jpg);
+  background-image: url(/images/banner2.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
+ background-size: cover;
+  background-position: top ;
   height: 100px;
 }
 
@@ -189,6 +194,11 @@ hr {
 
 .product-box_image {
   border-bottom: 1px solid var(--light-gray);
+  display: flex;
+     flex-wrap: wrap;
+    box-sizing: border-box;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
 
 .product-box_data {
