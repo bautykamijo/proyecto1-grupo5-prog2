@@ -5,9 +5,12 @@ const productController = {
         return res.render('productos',{
             lista:datos.productos,
             mensaje:"todos nuestros productos"});
+    }, 
+        
     }
 
 
-}
+
+
 
 module.exports = productController;
