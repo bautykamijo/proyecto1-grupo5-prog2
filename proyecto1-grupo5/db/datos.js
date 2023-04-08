@@ -84,7 +84,7 @@ const datos = {
                 id : 9,
                 producto : "Camiseta de San Lorenzo",
                 anio : 2014,
-                descripcion : 'Camiseta suplente de San Lorenzo en el torneo local 2014. En este torneo finalizo en la 8° posicion. Su maxima figura fue Leandor "Pipi" Romagnoli.',
+                descripcion : 'Camiseta suplente de San Lorenzo en el torneo local 2014. En este torneo finalizo en la 8° posicion. Su maxima figura fue Leandro "Pipi" Romagnoli.',
                 image : '/images/products/camiseta-sanlorenzo.jpg'
     },{
                 id : 10,
