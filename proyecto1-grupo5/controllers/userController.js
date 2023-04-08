@@ -9,9 +9,9 @@ login: function (req,res) {
         'login'
 )},
 regresar: function (req,res) {
-        res.render(
-            'regresar'
-)},
+res.render(
+    'regresar'
+    )},
 logo: function (req,res) {
     res.render(
         'logo'
@@ -19,7 +19,12 @@ logo: function (req,res) {
 perfil: function (req,res) {
     res.render(
         'perfil'
-    )}
+    )},
+edit: function (req,res) {
+    res.render(
+    "profile-edit"
+    )
+}
 
 }
 
