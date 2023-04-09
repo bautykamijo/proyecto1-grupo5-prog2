@@ -1,5 +1,4 @@
 var express = require('express');
-const { edit } = require('../controllers/userController');
 var router = express.Router();
 const usuarios= require("../controllers/userController")
 /* GET users listing. */

@@ -1,4 +1,5 @@
-const controlador = {
+const userController = {
+    
 register: function (req,res) {
     res.render(
         'register'
@@ -28,4 +29,4 @@ edit: function (req,res) {
 
 }
 
-module.exports= controlador
+module.exports = userController;

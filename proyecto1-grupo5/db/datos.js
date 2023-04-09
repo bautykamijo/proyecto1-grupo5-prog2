@@ -64,7 +64,9 @@ const datos = {
                 descripcion : 'Camiseta titular de Velez en el torneo local 2021. En este torneo finalizo en la 5° posicion. Su maxima figura fue Lucas Janson.',
                 image : '/images/products/camiseta-velez.jpg'
         }
-    ]
+    ],
+
+    comentarios : []
 }
 
 module.exports = datos;
