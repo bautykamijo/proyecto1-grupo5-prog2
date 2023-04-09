@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 router.get("/register", function(req,res){
-registerController ={
+registerController = {
     registro : { 
     email: req.query.email,
     usuario : req.query.usuario,

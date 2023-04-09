@@ -1,36 +1,7 @@
-const datardo = {
-productos :[
-
-
-
-
-
-
-{producto:"camiseta de Banfield",
-anio: 2018},
-
-
-
-
-
-{producto:"camiseta de Lanus",
-anio: 2022},
-
-{producto:"camiseta de San Lorenzo",
-anio: 1992},
-
-{producto:"camiseta de Velez Sarsfield",
-anio: 2021}
-]
-
-
-
-
-}
-
-
-
 const datos = {
+
+    usuario : '',
+
     productos: [
         {
                 id : 1,
