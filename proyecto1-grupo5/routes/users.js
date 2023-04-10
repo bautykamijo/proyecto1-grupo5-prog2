@@ -7,7 +7,7 @@ router.get("/login",usuarios.login)
 router.get('/regresar', usuarios.regresar)
 router.get("/logo",usuarios.logo)
 router.get("/perfil",usuarios.perfil)
-router.get("/profile-edit",usuarios.edit)
-
-
+router.get("/profile-edit",usuarios.editar)
+router.get("/agregar",usuarios.agregar)
+router.get("/resultados",usuarios.resultados)
 module.exports = router;

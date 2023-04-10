@@ -3,8 +3,8 @@ const userController = {
 register: function (req,res) {
     res.render(
         'register'
-    )
-},
+    
+)},
 login: function (req,res) {
     res.render(
         'login'
@@ -21,11 +21,20 @@ perfil: function (req,res) {
     res.render(
         'profile'
     )},
-edit: function (req,res) {
+editar: function (req,res) {
     res.render(
     "profile-edit"
-    )}
-
+    )},
+agregar: function (req,res) {
+    res.render("product-add")
+        
+},
+resultados:function (req,res) {
+    res.render("search-results")
+    
 }
+}
+
+
 
 module.exports = userController;
