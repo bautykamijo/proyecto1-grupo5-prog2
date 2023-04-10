@@ -11,21 +11,20 @@ login: function (req,res) {
 )},
 regresar: function (req,res) {
 res.render(
-    'regresar'
+    'index'
     )},
 logo: function (req,res) {
     res.render(
-        'logo'
+        'index'
 )},
 perfil: function (req,res) {
     res.render(
-        'perfil'
+        'profile'
     )},
 edit: function (req,res) {
     res.render(
     "profile-edit"
-    )
-}
+    )}
 
 }
 
