@@ -1,3 +1,6 @@
+let datos = require('../db/datos');
+
+
 const userController = {
     
 register: function (req,res) {
@@ -19,7 +22,7 @@ logo: function (req,res) {
 )},
 perfil: function (req,res) {
     res.render(
-        'profile'
+        'profile', {lista : datos.productos}
     )},
 editar: function (req,res) {
     res.render(
