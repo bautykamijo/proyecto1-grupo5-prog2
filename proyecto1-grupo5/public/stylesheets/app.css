@@ -110,6 +110,11 @@ hr {
   font-size: 1.5em;
 }
 
+.sesion{
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
 .search-form_button {
   position: absolute;
   right: 2px;
@@ -153,7 +158,8 @@ hr {
 }
 
 .logout:hover{
-  color: rgba(17,17,31,255);
+  color: rgba(90,194,231,255);
+  font-weight: 600;
 }
 
 .left-navbar a,
@@ -489,7 +495,7 @@ textarea.form-input {
 
 .subrayado{
   text-decoration: underline;
-  color: aliceblue;
+  color: white;
 }
 
 /*====== Profile ======*/
@@ -524,7 +530,7 @@ textarea.form-input {
   }
 
   .banner {
-    height: 360px;
+    height: 370px;
   }
 
   .btn-toggle-navbar {

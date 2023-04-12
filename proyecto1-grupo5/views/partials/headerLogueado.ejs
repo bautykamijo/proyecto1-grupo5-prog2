@@ -31,17 +31,17 @@
 			<nav class="main-navbar">
 				<ul class="left-navbar">
 					<li><a href="/">Todos los productos</a></li>
-					<li><a href="/users/agregar">Cargar productos</a></li>
+					<li><a href="/product/add">Cargar productos</a></li>
 				</ul>
 	
 				<ul class="right-navbar">
-					<li><a href="/users/perfil">
+					<li><a href="/users/profile">
 						<%=lista.usuario.nombre%> <i class="fas fa-user"></i>
 						</a>
 					</li>
 					<li>
-						<form action="" method="post">
-							<button class="logout" type="submit">
+						<form action="/" method="get">
+							<button class="logout sesion" type="submit">
 								Cerrar sesión <i class="fas fa-sign-in-alt"></i>
 							</button>
 						</form>
