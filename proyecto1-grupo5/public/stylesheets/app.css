@@ -213,6 +213,7 @@ hr {
   font-size: 3.0em;
   font-weight: 600;
   color: rgba(17,17,31,255);
+  padding-bottom: 35px;
 }
 
 .product-box {
@@ -244,9 +245,17 @@ hr {
   flex-wrap: wrap;
 }
 
+.camisetas{
+  height: 300px;
+
+}
+
+
+
+
 .product-box_data h2 {
-  font-size: 2.4em;
-  font-weight: 300;
+  font-size: 1.9em;
+  font-weight: 500;
   margin: 0;
 }
 
@@ -374,6 +383,7 @@ hr {
   color: var(--gray);
   padding: 15px 0;
 }
+
 
 
 /*====== Product Detail ======*/

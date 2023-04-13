@@ -22,11 +22,13 @@ logo: function (req,res) {
 )},
 perfil: function (req,res) {
     res.render(
-        'profile', {lista : datos}
+        'profile', {lista : datos,
+                     comments : datos.comentarios} 
     )},
 editar: function (req,res) {
     res.render(
-    "profile-edit", {lista : datos}
+    "profile-edit", {lista : datos,
+    }
     )},
 agregar: function (req,res) {
     res.render("product-add", {lista : datos})
