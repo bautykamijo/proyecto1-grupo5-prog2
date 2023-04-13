@@ -41,12 +41,12 @@
 
                 <a href="/product/detail/<%= productos.id %>">
                     <figure class="product-box_image">
-                        <img src= <%= productos.image %> alt="foto de <%= productos.nombre %>">
+                        <img class="camisetas" src= <%= productos.image %> alt="foto de <%= productos.nombre %>">
                     </figure>
                     <article class="product-box_data">
                         <h2><%= productos.nombre %></h2>
                         <p><%= productos.descripcion %></p>
-                        <p>Comentarios: </p>
+                        <p>Comentarios: <%=comments.length%> </p>
                     </article>
                 </a>
             </section>

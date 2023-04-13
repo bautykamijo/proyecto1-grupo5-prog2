@@ -2,6 +2,7 @@ const datos = {
 
     usuario : {
 
+        id : 1,
         nombre : 'Ramiro Porco',
         mail : 'chanchaporco@gmail.com',
         fechaNacimiento : '04/03/04',
@@ -54,8 +55,8 @@ const datos = {
                 nombre : "Camiseta del Club Atletico Huracan",
                 anio : 2015,
                 fechaDeCarga : '28/08/2017',
-                descripcion : 'Camiseta titular de Huracan en el torneo local 2015. En este torneo finalizo en la 23° posicion, siendo en ese mismo año el subcampeón de la Copa Sudamericana. Su maxima figura fue Patricio Toranzo.',
-                image : '/images/products/camiseta-huracan.png'
+                descripcion : 'Camiseta titular de Huracan en el torneo local 2022. En este torneo finalizo en la 10° posicion. Su maxima figura fue Matias Coccaro.',
+                image : '/images/products/camiseta-huracan.jpg'
     },{
                 id : 7,
                 nombre : "Camiseta del Club Atletico Lanus",
@@ -90,6 +91,7 @@ const datos = {
     comentarios : [
         
 {
+            id : 1,
             nombre : "Ramiro Porco",
             texto :  'Que lindos recuerdos me trae esta remera.',
             image : '/images/users/default-image.png'
@@ -97,21 +99,25 @@ const datos = {
     },
 
 {
+            id : 2,
             nombre : "Juan Ramirez",
             texto :  'Como puede ser tan fea? Bala.',
             image : '/images/users/default-image.png'
 
 },{
+            id : 3,
             nombre : "Beto Fiondella",
             texto :  'Es la mas linda del mundo, ninguna se le compara. ',
             image : '/images/users/default-image.png'
 
 },{
+            id : 4,
             nombre : "Hugo Benjamin Ibarra",
             texto :  'Sabes a donde la puedo comprar a un precio razonable? ',
             image : '/images/users/default-image.png'
 
 },{
+            id : 5,
             nombre : "Hugo Aguirre",
             texto :  'Increible camiseta! Cuanta mistica! ',
             image : '/images/users/default-image.png'
