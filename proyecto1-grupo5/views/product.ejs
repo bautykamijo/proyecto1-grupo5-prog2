@@ -17,13 +17,13 @@
             </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
-                    <%  for( let i = 0; i < comments.length; i++ ) { %>
+                    <%  for( let i = 0; i < comments[i].length; i++ ) { %>
                     <article>
-                        <img src=<%=comments.image%> alt="<%=comments.nombre%>">
+                        <img src=<%=comments[i].image%> alt="<%=comments[i].nombre%>">
                         <div class="data">
                             <p class="user">
-                            <strong> <a href="/user/profile"><%=comments.nombre%> </a> </strong>
-                            <%=comments.texto%></p>
+                            <strong> <a href="/user/profile"><%=comments[i].nombre%> </a> </strong>
+                            <%=comments[i].texto%></p>
                         </div>
                     </article>
                     <% } %>

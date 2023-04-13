@@ -54,14 +54,14 @@ const datos = {
                 nombre : "Camiseta del Club Atletico Huracan",
                 anio : 2015,
                 fechaDeCarga : '28/08/2017',
-                descripcion : 'Camiseta titular de Huracan en el torneo local 2015. En este torneo finalizo en la 23° posicion, siendo en ese mismo año el subcampeón de la Copa Sudamericana. Su maxima figura fue El "Pato" Toranzo.',
+                descripcion : 'Camiseta titular de Huracan en el torneo local 2015. En este torneo finalizo en la 23° posicion, siendo en ese mismo año el subcampeón de la Copa Sudamericana. Su maxima figura fue Patricio Toranzo.',
                 image : '/images/products/camiseta-huracan.png'
     },{
                 id : 7,
                 nombre : "Camiseta del Club Atletico Lanus",
                 anio : 2022,
                 fechaDeCarga : '01/01/2021',
-                descripcion : 'Camiseta titular de Lanus en el torneo local 2022. En este torneo finalizo en la 27° posicion. Su maxima figura fue Jose "Pepe" Sand.',
+                descripcion : 'Camiseta titular de Lanus en el torneo local 2022. En este torneo finalizo en la 27° posicion. Su maxima figura fue Jose Sand.',
                 image : '/images/products/camiseta-lanus.jpg'
     },{
                 id : 8,
@@ -88,6 +88,12 @@ const datos = {
     ],
 
     comentarios : [
+    {nombre : "Ramiro Porco",
+    texto :  'Que lindos recuerdos me trae esta remera.',
+    image : '/images/users/default-image.png'
+
+
+    },
 
 {
             nombre : "Juan Ramirez",
@@ -111,7 +117,7 @@ const datos = {
 
 }
 
-    ]
+    ] 
 }
 
 module.exports = datos;
