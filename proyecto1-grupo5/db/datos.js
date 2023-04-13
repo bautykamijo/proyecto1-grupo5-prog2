@@ -88,10 +88,11 @@ const datos = {
     ],
 
     comentarios : [
-    {nombre : "Ramiro Porco",
-    texto :  'Que lindos recuerdos me trae esta remera.',
-    image : '/images/users/default-image.png'
-
+        
+{
+            nombre : "Ramiro Porco",
+            texto :  'Que lindos recuerdos me trae esta remera.',
+            image : '/images/users/default-image.png'
 
     },
 
