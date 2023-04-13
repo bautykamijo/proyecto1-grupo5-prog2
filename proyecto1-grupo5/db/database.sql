@@ -54,6 +54,11 @@ VALUES
 
  
 
+
+
+/*En la tabla de comentarios, pasamos dos comentarios para cada post, corriendo el (INSERT INTO) dos veces, se crean 4 comentarios para cada post*/
+
+
 create table  comentarios( id INT unsigned primary key auto_increment,
  usuario_id int unsigned not null, 
  producto_id int unsigned not null, 
