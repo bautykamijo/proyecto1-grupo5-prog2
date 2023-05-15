@@ -1,4 +1,7 @@
+create schema proyecto_database;
+
 use proyecto_database;
+
 create table usuarios
 (id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(30) NOT NULL,
@@ -7,9 +10,9 @@ contrasenia VARCHAR(100) NOT NULL,
 foto_perfil VARCHAR(200),
 dni INT NOT NULL UNIQUE,
 fecha_nacimiento DATE NOT NULL,
-createdAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
-deletedAt TIMESTAMP NULL );
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+deleted_at TIMESTAMP NULL );
 
 
 
@@ -34,9 +37,9 @@ create table productos
 usuario_id INT UNSIGNED NOT NULL,
 nombre VARCHAR(50) NOT NULL,
 descripcion TEXT NOT NULL,
-createdAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
- updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
- deletedAt TIMESTAMP NULL,
+created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+ deleted_at TIMESTAMP NULL,
  CONSTRAINT fk_productos_usuarios FOREIGN KEY(usuario_id) REFERENCES usuarios(id)
  );
  INSERT INTO productos(id,usuario_id,nombre,descripcion)  
@@ -63,9 +66,9 @@ create table  comentarios( id INT unsigned primary key auto_increment,
  usuario_id int unsigned not null, 
  producto_id int unsigned not null, 
 texto text not null,
- createdAt   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
- updatedAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
- deletedAt TIMESTAMP NULL,
+ created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+ updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+ deleted_at TIMESTAMP NULL,
  CONSTRAINT fk_producto_usuarios FOREIGN KEY(usuario_id) REFERENCES usuarios(id),
  CONSTRAINT fk_producto_productos FOREIGN KEY(producto_id) REFERENCES productos(id)
  );

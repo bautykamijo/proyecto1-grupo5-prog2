@@ -1,6 +1,6 @@
 module.exports = function(sequelize, dataTypes) {
 
-    let alias = 'Usuario';
+    let alias = 'Producto';
 
     let cols = {
 
