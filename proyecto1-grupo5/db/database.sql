@@ -1,4 +1,4 @@
-use proyecto;
+use proyecto_database;
 create table usuarios
 (id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(30) NOT NULL,
