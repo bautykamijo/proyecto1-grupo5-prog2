@@ -1,11 +1,17 @@
-let datos = require('../db/datos');
+let db = require('../database/models');
 
 
 const indexController = {
 
-    indice : function (req, res) {
-        return res.render('index', {lista : datos.productos,
-                                    comments : datos.comentarios});
+    indice :  (req, res) => {
+
+    db.Producto.findAll()
+    .then(function (resultado) {
+        console.log(resultado);
+        return res.render('index', {lista : resultado});
+    })
+    .catch();
+        
 
 
     },
@@ -16,6 +22,8 @@ const indexController = {
 
                                     
     },
+
+
 
 }
 

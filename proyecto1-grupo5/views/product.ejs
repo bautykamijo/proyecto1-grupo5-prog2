@@ -12,21 +12,11 @@
     <div class="product-detail">
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
-                <img src="<%= seleccionado.image %>" alt="" class="<%= seleccionado.nombre %>">
+                <img src="/images/products/<%= seleccionado.img %>" alt="" class="<%= seleccionado.nombre %>">
                 <p class="product-detail-description"><%= seleccionado.descripcion %></p>
             </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
-                    <%  for( let i = 0; i < comments.length; i++ ) { %>
-                    <article>
-                        <img src=<%=comments[i].image%> alt="<%=comments[i].nombre%>">
-                        <div class="data">
-                            <p class="user">
-                            <strong> <a href="/users/profile"><%=comments[i].nombre%> </a> </strong>
-                            <%=comments[i].texto%></p>
-                        </div>
-                    </article>
-                    <% } %>
                 </section>
                 <form class="form" action="/users/profile" method="get">
                     <input class="form-input" type="text" value="" placeholder="Agregar comentario">

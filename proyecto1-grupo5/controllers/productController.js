@@ -1,18 +1,21 @@
-const datos = require("../db/datos")
+const db = require("../database/models");
+let producto = db.Producto;
+
+
 const productController = {
 
-    detalle : function (req, res) {
+    detalle : (req, res) => {
         let indice = req.params.id;
-        let producto = '';
-        for (let i = 0; i < datos.productos.length; i++) {
-            
-            if (indice == datos.productos[i].id) {
-                 producto = datos.productos[i];
-            }  
-        }
-
-        return res.render('product',{seleccionado : producto,
-                                    comments : datos.comentarios});
+        producto.findByPk(indice)
+        .then(function(resultados) {
+            console.log(resultados);
+          return res.render('product', {
+            seleccionado : resultados
+          })
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
     }, 
         
 
