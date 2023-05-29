@@ -9,13 +9,13 @@
         </div>
         <!-- Show the "ultimos" products -->
         <h2 class="col-12"> <i> <br> 
-            <form action="/users/login" method="get">
-            <div><input type="text" placeholder="Nombre completo:" > </div>
-            <div><input type="email" placeholder="Email:"> </div>
-            <div><input type="password" placeholder="Constraseña:"> </div>
-            <div><input type="date" placeholder="Fecha de nacimiento:"> </div>
-            <div><input type="number" placeholder="Numero de documento:"> </div>
-            <div><input type="file" placeholder="Foto de Perfil:"> </div>
+            <form action="/users/login" method="post">
+            <div><input type="text" name="nombre" placeholder="Nombre completo:" > </div>
+            <div><input type="email" name="mail" placeholder="Email:"> </div>
+            <div><input type="password"name="contrasenia" placeholder="Constraseña:"> </div>
+            <div><input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento:"> </div>
+            <div><input type="number"name="dni" placeholder="Numero de documento:"> </div>
+            <div><input type="text" name="foto_perfil"placeholder="Foto de Perfil:"> </div>
             <button class="verdaro">Registrarme</button>
         </form>
         <br><br>
