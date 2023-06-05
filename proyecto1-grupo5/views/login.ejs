@@ -1,18 +1,21 @@
 <%- include('./partials/head') %>
 <%- include('./partials/header') %>
 
+
 	<!-- Novedades -->
+    <br>
 	<div class="container products-wrapper">
 		<div class="row">
-			<div class="col-12">
-				<h2 class="products-title">Ingresar</h2>
-			</div>
+		
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12"> 
-                <form action="/users/profile" method="post">
+			<h2 class="col-12 centrarlo"> 
+                <form class="registrarme" action="/users/profile" method="post">
+                    <h2>Ingresar</h2>
                 <div><input type="email" placeholder="Email:"> </div>
                 <div><input type="password" placeholder="Constraseña:"> </div>
-                <div> Recordame!<input type="checkbox"  placeholder="Recordame" > </div>
+                <br>
+                <div> Recordame! <input type="checkbox"  placeholder="Recordame" > </div>
+                <br>
                 <button class="verdaro">Ingresar</button>
             </form>
 

@@ -1,6 +1,6 @@
 const db = require('../database/models');
-let datos = require('../db/datos');
-const bcrypt = require("bcryptjs")
+const user = db.Usuario;
+const bcrypt = require("bcryptjs");
 
 const userController = {
     
@@ -9,10 +9,7 @@ register: function (req,res) {
         'register'
     
 )},
-login: function (req,res) {
-    res.render(
-        'login'
-)},
+
 regresar: function (req,res) {
 res.render(
     'index'
@@ -46,27 +43,60 @@ create: function(req, res) {
 
 
 store: function (req,res) {
+
+    let errors = {};
+
+        if (req.body.email == "") {
+            errors.message = "El email está vacio";
+            res.locals.errors = errors;
+            return res.render('register');
+
+        } else if(req.body.password == ""){
+            errors.message = "La clave está vacia";
+            res.locals.errors = errors;
+            return res.render('register');
+        } else {
+
     let info= req.body
-    info.contrasenia = bcrypt.hashSync(info.contrasenia, 10)
-    db.Usuario.create(userSave)
+
+    console.log(info);
+
+    let userStore = {
+        name: info.name,
+        mail: info.mail,
+
+        contrasenia: bcrypt.hashSync(info.contrasenia, 10),
+        remember_token: ""
+    }
+
+    user.create(userStore)
     .then (function (result) {
+        console.log(result);
         return res.redirect("/users/login");
     })
     .catch(function (error) {
         console.log(error)
     })
-    
+}
     
 },
+login: function(req, res) {
+    if (req.session.user != undefined) {
+        return res.redirect('/');
+    } else {
+        return res.render('login');
+    }
+},
 loginPost: function (req,res) {
-    let mailBuscado= req.body.mail;
-    let contra= req.body.contrasenia;
-    let filtro= {
+
+    let mailBuscado = req.body.mail;
+    let contra = req.body.contrasenia;
+    let filtro = {
         where: [{mail:mailBuscado }]
     }
 
 
-    db.Usuario.findOne(filtro)
+    user.findOne(filtro)
     .then((resultado) => {
         if (resultado != null) {
 
