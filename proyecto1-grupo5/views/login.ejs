@@ -9,12 +9,12 @@
 		
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12 centrarlo"> 
-                <form class="registrarme" action="/users/profile" method="post">
+                <form class="registrarme" action="/users/login" method="post">
                     <h2>Ingresar</h2>
-                <div><input type="email" placeholder="Email:"> </div>
-                <div><input type="password" placeholder="Constraseña:"> </div>
+                <div><input type="email" name="mail" placeholder="Email:"> </div>
+                <div><input type="password" name="contrasenia" placeholder="Constraseña:"> </div>
                 <br>
-                <div> Recordame! <input type="checkbox"  placeholder="Recordame" > </div>
+                <div> Recordame! <input type="checkbox" name="rememberme" placeholder="Recordame" > </div>
                 <br>
                 <button class="verdaro">Ingresar</button>
             </form>

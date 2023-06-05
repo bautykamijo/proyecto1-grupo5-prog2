@@ -1,8 +1,20 @@
 const db = require("../database/models");
 let producto = db.Producto;
+let op = db.Sequelize.Op;
 
 
 const productController = {
+
+  findAll : (req, res) => {
+    producto.findAll()
+    .then(function (result) {
+    
+      return res.render("index", { lista: result });
+    })
+    .catch(function (err) {
+      console.log(err);
+    });
+},
 
     detalle : (req, res) => {
         let indice = req.params.id;

@@ -4,20 +4,6 @@ const bcrypt = require("bcryptjs");
 
 const userController = {
     
-register: function (req,res) {
-    res.render(
-        'register'
-    
-)},
-
-regresar: function (req,res) {
-res.render(
-    'index'
-    )},
-logo: function (req,res) {
-    res.render(
-        'index'
-)},
 perfil: function (req,res) {
     res.render(
         'profile', {lista : datos,
@@ -62,11 +48,13 @@ store: function (req,res) {
     console.log(info);
 
     let userStore = {
-        name: info.name,
-        mail: info.mail,
+        nombre: req.body.nombre,
+        mail: req.body.mail,
+        contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
+        foto_perfil: req.body.foto_perfil,
+        dni: req.body.dni,
+        fecha_nacimiento: req.body.fecha_nacimiento
 
-        contrasenia: bcrypt.hashSync(info.contrasenia, 10),
-        remember_token: ""
     }
 
     user.create(userStore)
@@ -86,6 +74,7 @@ login: function(req, res) {
     } else {
         return res.render('login');
     }
+
 },
 loginPost: function (req,res) {
 
@@ -98,19 +87,26 @@ loginPost: function (req,res) {
 
     user.findOne(filtro)
     .then((resultado) => {
+        console.log(resultado);
         if (resultado != null) {
 
             let claveCorrecta = bcrypt.compareSync(contra, resultado.contrasenia);
 
             if (claveCorrecta) {
-                return res.send('Existe el mail buscado y su contraseña es correcta');
+
+                req.session.user = resultado.dataValues;
+
+                    if (req.body.rememberme != undefined) {
+                        res.cookie('userId', resultado.id, {maxAge: 1000 * 60 * 15});
+                    }
+                   
+                     return res.redirect('/');
+                } else {
+                    return res.send("Existe el mail y pero la password es incorrecta");
+                }
             } else {
-                return res.send('Existe el mail buscado, pero su contraseña es incorrecta');
+                return res.send("Noooo Existe el mail")
             }
-           
-        } else {
-            return res.send('Este mail no esta registrado en nuestro sistema');
-        }
     }).catch((error) => {
         console.log(error);
     });
