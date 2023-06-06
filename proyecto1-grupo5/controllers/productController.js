@@ -32,7 +32,7 @@ const productController = {
         
 
     agregarProducto : function (req, res) {
-        return res.render('product-add',{lista:datos});
+        return res.render('product-add');
     }
 
     }

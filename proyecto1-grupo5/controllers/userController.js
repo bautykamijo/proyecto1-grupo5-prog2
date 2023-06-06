@@ -102,10 +102,10 @@ loginPost: function (req,res) {
                    
                      return res.redirect('/');
                 } else {
-                    return res.send("Existe el mail y pero la password es incorrecta");
+                    return res.send("Existe el mail, pero la contraseña es incorrecta");
                 }
             } else {
-                return res.send("Noooo Existe el mail")
+                return res.send("No existe el mail ingresado")
             }
     }).catch((error) => {
         console.log(error);
