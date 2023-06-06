@@ -110,9 +110,14 @@ loginPost: function (req,res) {
     }).catch((error) => {
         console.log(error);
     });
-    }
-    
-}
+    },
+    logout: function(req, res) {
+        res.clearCookie('userId');
+        return res.render('login');
+    },
+};
+
+
 
 
 
