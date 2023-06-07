@@ -15,21 +15,25 @@ const productController = {
       console.log(err);
     });
 },
-
     detalle : (req, res) => {
+
         let indice = req.params.id;
-        producto.findByPk(indice)
+      
+        let rel = {include : [
+          {association : "Usuario"},
+          {association : "Comentario"},
+        ]};
+
+        producto.findByPk(indice, rel)
         .then(function(resultados) {
-            console.log(resultados);
-          return res.render('product', {
-            seleccionado : resultados
-          })
+            
+          return res.render('product', {seleccionado : resultados});
         })
         .catch(function(error) {
           console.log(error);
         });
     }, 
-        
+      
 
     agregarProducto : function (req, res) {
         return res.render('product-add');
