@@ -37,6 +37,11 @@ const productController = {
 
     agregarProducto : function (req, res) {
         return res.render('product-add');
+    },
+    delete: function (req,res) {
+      db.Producto.destroy({where: {id:req.params.id}
+      })
+        res.redirect("/index")
     }
 
     }
