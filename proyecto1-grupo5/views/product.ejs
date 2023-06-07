@@ -10,8 +10,11 @@
     <div class="d-flex align-items-center">
         <h2 class="products-title"><%= seleccionado.nombre %></h2> 
         <p class="product-detail-description">
-            <a href="/product/add">Editar</a>
-        </p>
+
+            <ol class="flex-box-c">
+                <% for( let i = 0; i < seleccionado.length; i++ ) { %>
+                  <li class="li">
+            <a href="/product/product-update/<%= seleccionado[i].id %>">Modificar</a><% } %>
     </div>
     <div class="product-detail">
         <div class="row">
@@ -31,6 +34,7 @@
                     <input type="text" hidden name="id" id="" value="<%= seleccionado.id %>">
                     <input class="form-input" value="Eliminar" type="submit">
                 </form>
+                <form action=""></form>
                 <hr>
             </div>
         </div>

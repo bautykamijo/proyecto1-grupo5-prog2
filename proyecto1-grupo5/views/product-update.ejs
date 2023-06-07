@@ -1,0 +1,35 @@
+<%- include('./partials/head') %>
+<% if (locals.user != null) { %>
+    <%- include('./partials/headerLogueado') %>
+  <% } else { %>
+    <%- include('./partials/header') %>
+<% } %>
+    <main class="container main-container">
+     
+       
+          
+            <!-- Formulario de Registro -->
+
+            <form class="form" action="/product/update/<%= seleccionado.id %>" method="POST">
+              <div class="title">Actualizar Producto</div>
+
+              <!-- <input type="hidden" name="id" value=""> -->
+              
+              <div class="input-container ic1">
+                <input id="nombre" class="input" type="text" name="nombre" placeholder="Nombre" value="<%= seleccionado.nombre %>" />
+              </div>
+              <div class="input-container ic2">
+                <input id="descripcion" class="input" type="text" name="descripcion" placeholder="Descripcion" value="<%=seleccionado.descrpicion %>"/>
+              </div>
+              <div class="input-container ic2">
+                <input id="img" class="input" type="text" name="img" placeholder="imagen"  value="<%= seleccionado.img %>" />
+              </div>
+
+              <button type="text" class="submit">Actualizar</button>
+  
+  
+            </form>
+            
+
+      
+    </main>
