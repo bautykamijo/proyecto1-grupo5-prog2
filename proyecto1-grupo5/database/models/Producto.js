@@ -55,5 +55,7 @@ module.exports = function(sequelize, dataTypes) {
               as: 'comentarios_producto',
             });
           };
+
+          
     return Producto;
             }

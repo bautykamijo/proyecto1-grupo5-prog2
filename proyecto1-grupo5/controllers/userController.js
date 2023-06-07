@@ -105,11 +105,12 @@ loginPost: function (req,res) {
                 return res.render('login');
                 }
 
+    
     }).catch((error) => {
         console.log(error);
     });
 
-    
+
     },
     logout: function(req, res) {
         res.clearCookie('userId');
