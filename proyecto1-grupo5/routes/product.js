@@ -6,7 +6,7 @@ router.get('/all', productController.findAll);
 router.get('/detail/:id', productController.detalle);
 router.get('/add', productController.agregarProducto);
 
-
+router.post("/delete/:id",productController.delete)
 
 
 module.exports = router;
