@@ -11,6 +11,9 @@
 			<h2 class="col-12 centrarlo"> 
                 <form class="registrarme" action="/users/login" method="post">
                     <h2>Ingresar</h2>
+                    <% if (locals.errors) { %>
+                        <p style="color: red; font-size: 15px;"><%= errors.message %></p>
+                  <% } %>
                 <div><input type="email" name="mail" placeholder="Email:"> </div>
                 <div><input type="password" name="contrasenia" placeholder="Constraseña:"> </div>
                 <br>

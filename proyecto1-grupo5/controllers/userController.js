@@ -11,16 +11,7 @@ perfil: function (req,res) {
     )},
 editar: function (req,res) {
     res.render(
-    "profile-edit", {lista : datos,
-    }
-    )},
-agregar: function (req,res) {
-    res.render("product-add", {lista : datos})
-        
-},
-resultados:function (req,res) {
-    res.render("search-results")
-    
+    "profile-edit", {lista : datos,})
 },
 
 create: function(req, res) {
@@ -32,12 +23,12 @@ store: function (req,res) {
 
     let errors = {};
 
-        if (req.body.email == "") {
+        if (req.body.mail == "") {
             errors.message = "El email está vacio";
             res.locals.errors = errors;
             return res.render('register');
 
-        } else if(req.body.password == ""){
+        } else if(req.body.contrasenia == ""){
             errors.message = "La clave está vacia";
             res.locals.errors = errors;
             return res.render('register');
@@ -81,13 +72,15 @@ loginPost: function (req,res) {
     let mailBuscado = req.body.mail;
     let contra = req.body.contrasenia;
     let filtro = {
-        where: [{mail:mailBuscado }]
-    }
+        where: [{mail:mailBuscado }]}
 
 
     user.findOne(filtro)
     .then((resultado) => {
         console.log(resultado);
+
+        let errors = {}; 
+
         if (resultado != null) {
 
             let claveCorrecta = bcrypt.compareSync(contra, resultado.contrasenia);
@@ -97,22 +90,31 @@ loginPost: function (req,res) {
                 req.session.user = resultado.dataValues;
 
                     if (req.body.rememberme != undefined) {
-                        res.cookie('userId', resultado.id, {maxAge: 1000 * 60 * 15});
-                    }
-                   
+                        res.cookie('userId', resultado.id, {maxAge: 1000 * 60 * 15})}
                      return res.redirect('/');
+
                 } else {
-                    return res.send("Existe el mail, pero la contraseña es incorrecta");
+                    errors.message = "El mail existe, pero la contraseña es incorrecta!";
+                    res.locals.errors = errors;
+                    return res.render('login');
                 }
-            } else {
-                return res.send("No existe el mail ingresado")
-            }
+
+                } else {
+                errors.message = "No existe el mail!";
+                res.locals.errors = errors;
+                return res.render('login');
+                }
+
+    
     }).catch((error) => {
         console.log(error);
     });
+
+
     },
     logout: function(req, res) {
         res.clearCookie('userId');
+
         return res.render('login');
     },
 };
