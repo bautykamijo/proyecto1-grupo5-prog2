@@ -17,6 +17,8 @@ const indexController = {
     },
 
     resultados : function (req, res) {
+        let busqueda = req.query.Producto
+
         return res.render('search-results', {lista : datos.productos,
                                     comments : datos.comentarios});
 
