@@ -8,3 +8,7 @@
                         </div>
                     </article>
                     <% } %> 
+
+
+
+                    <%= locals.user.nombre %>

@@ -52,13 +52,12 @@ module.exports = function(sequelize, dataTypes) {
         Usuario.hasMany(models.Producto, {
           foreignKey: 'usuario_id',
           as: 'productos',
-        });
-    }
-    Usuario.associate = (models) => {
+        }),
+   
         Usuario.hasMany(models.Comentario, {
             foreignKey: 'usuario_id',
-            as: 'comentarios_usuario',
-            });
-          };
+            as: 'comentarios',
+            })};
+            
     return Usuario;
 }

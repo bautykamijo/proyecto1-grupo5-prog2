@@ -13,13 +13,13 @@
         <!-- Show the "ultimos" products -->
         
         
-        <%  for( let i = 1; i<5 ; i++ ) { %>
+        <%  for( let i = 1; lista.length ; i++ ) { %>
             <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
 
                 <a href="/product/detail/<%= lista[i].id %>">
                     <figure class="product-box_image">
-                        <img class="camisetas" src= <%= lista[i].image %> alt="foto de <%= lista[i].nombre %>">
+                        <img class="camisetas" src= <%= lista[i].img %> alt="foto de <%= lista[i].nombre %>">
                     </figure>
                     <article class="product-box_data cajita">
                         <h2><%= lista[i].nombre %></h2>
