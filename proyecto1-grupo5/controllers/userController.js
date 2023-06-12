@@ -5,6 +5,7 @@ const bcrypt = require("bcryptjs");
 const userController = {
     
 perfil: function (req,res) {
+
     let indice = req.params.id;
     
       let rel = {include : [
@@ -14,7 +15,7 @@ perfil: function (req,res) {
 
       user.findByPk(indice, rel)
       .then(function(resultados) {
-          console.log(resultados);
+
         return res.render('profile', {lista : resultados});
       })
       .catch(function(error) {
@@ -102,7 +103,8 @@ loginPost: function (req,res) {
                 console.log(req.session.user)
 
                     if (req.body.rememberme != undefined) {
-                        res.cookie('userId', resultado.id, {maxAge: 1000 * 60 * 15})}
+                        res.cookie('userId', resultado.id, {maxAge: 1000 * 60 * 15})
+                    }
                      return res.redirect('/');
 
                 } else {

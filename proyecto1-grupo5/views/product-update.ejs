@@ -4,17 +4,18 @@
   <% } else { %>
     <%- include('./partials/header') %>
 <% } %>     
-       
+       <br><br>
           
       <div class="container products-wrapper">
         <div class="row">
             <h2 class="col-12 centrarlo"> 
               <form class="registrarme" action="/product/update/<%= seleccionado.id %>" method="POST">
                     <h2>Modificar</h2>
-                    <div><input type="hidden" placeholder="Imagen" name="usuario_id" value="<%= locals.user.id %>"> </div>
-                    <div><input type="text" placeholder="Imagen" name="img" value="<%= seleccionado.img %>"></div>
+                    <div><input type="hidden" placeholder="usuario_id" name="usuario_id" value="<%= locals.user.id %>"> </div>
+                    <div><input type="text" placeholder="Imagen:" name="img" value="<%= seleccionado.img %>"></div>
                     <div><input type="text" placeholder="Nombre del producto:" name="nombre" value="<%= seleccionado.nombre %>"></div>
                     <div><input type="text" placeholder="Descripcion:" name="descripcion" value="<%= seleccionado.descripcion %>"></div>
+                    <br>
                     <button type="submit" class="verdaro">Actualizar</button>
                 </form>
             </h2>

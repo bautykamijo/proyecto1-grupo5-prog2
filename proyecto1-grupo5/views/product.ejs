@@ -3,6 +3,7 @@
     <%- include('./partials/headerLogueado') %>
   <% } else { %>
     <%- include('./partials/header') %>
+    
 <% } %>
 
 <!-- product detail -->
@@ -12,15 +13,26 @@
         <p class="product-detail-description">
 
             <ol class="flex-box-c">
-                <% for( let i = 0; i < seleccionado.length; i++ ) { %>
+                
                   <li class="li">
-            <a href="/product/product-update/<%= seleccionado[i].id %>">Modificar</a><% } %>
+           
     </div>
     <div class="product-detail">
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
                 <img src="<%= seleccionado.img%>" alt="" class="<%= seleccionado.nombre %>">
                 <p class="product-detail-description"><%= seleccionado.descripcion %></p>
+                
+                <% if (locals.user && seleccionado.usuario_id == locals.user.id){ %>
+                    <form class="form" action="/product/update/<%= seleccionado.id %>" method="get"> 
+                        <button type="submit" class="buy-now-button">MODIFICAR</button>      
+                    </form>
+                    <form class="form" action="/product/delete" method="POST">
+                    <input type="hidden" name="id" value="<%= seleccionado.id %>">
+                    <input style="background-color: rgb(229, 41, 41); color: white;" class="form-input" value="ELIMINAR" name="eliminar" type="submit">
+                </form>
+                <% } %>
+            
             </article>
             <div class="col-12 col-lg-4">
                 <section class="comments">
@@ -33,15 +45,7 @@
 
                 <br><br>
 
-                <form class="form" action="/product/update/<%= seleccionado.id %>" method="get"> 
-                    <button type="submit" class="buy-now-button">MODIFICAR</button>      
-                </form>
-
-
-                <form class="form" action="/product/delete" method="POST">
-                    <input type="hidden" name="id" value="<%= seleccionado.id %>">
-                    <input class="form-input" value="ELIMINAR" name="eliminar" type="submit">
-                </form>
+               
                 
 
             </div>

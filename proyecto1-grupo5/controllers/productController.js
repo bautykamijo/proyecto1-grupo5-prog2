@@ -27,7 +27,6 @@ const productController = {
 
       producto.findByPk(indice, rel)
       .then(function(resultados) {
-          
         return res.render('product', {seleccionado : resultados});
       })
       .catch(function(error) {
@@ -90,14 +89,14 @@ showFormUpdate: (req, res) => {
 
 
 update: (req, res) => {
-let id = req.params.id;
+let idProducto = req.params.id;
 let info = req.body;
 
-movie.update(info, {
-    where: [{ id: id }],
+producto.update(info, {
+    where: [{ id: idProducto }],
     })
     .then((result) => {
-    return res.redirect("/product/id/" + id);
+    return res.redirect("/product/detail/" + idProducto);
     })
     .catch((err) => {
     console.log(err);
@@ -107,7 +106,10 @@ movie.update(info, {
 
   
   delete: function (req,res) {
+
     let idParaEliminar = req.body.id;
+
+    
 
     producto.destroy({
       where: [{ id: idParaEliminar }],
