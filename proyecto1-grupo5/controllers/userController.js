@@ -127,7 +127,7 @@ loginPost: function (req,res) {
     logout: function(req, res) {
         res.clearCookie('userId');
 
-        return res.render('login');m
+        return res.render('login');
     },
 };
 
