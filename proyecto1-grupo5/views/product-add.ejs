@@ -4,13 +4,10 @@
  <!-- Novedades -->
  <div class="container products-wrapper">
     <div class="row">
-        <div class="col-12">
-            <h2 class="products-title">Agregar productos</h2>
-        </div>
-        <!-- Show the "ultimos" products -->
-        <h2 class="col-12"> 
-            <form action="/product/add" method="post">
-                
+    
+            <h2 class="col-12 centrarlo">
+            <form class="registrarme" action="/product/add" method="post">
+                <h2>Agregar Producto</h2>
                 <div><input type="hidden" placeholder="Imagen" name="usuario_id" value="<%= locals.user.id %>"> </div>
                 <div><input type="text" placeholder="Imagen" name="img"> </div>
                 <div><input type="text" placeholder="Nombre del producto:" name="nombre"> </div>
@@ -18,5 +15,8 @@
                 <button type="submit" class="verdaro">Agregar Producto</button>
             </form>
         </h2>
+
+    </div>
+</div>
 
 <%- include('./partials/footer') %>

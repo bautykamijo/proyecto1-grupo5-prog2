@@ -67,7 +67,7 @@ const productController = {
 
       producto.create(info)
       .then((result) => {
-        return res.redirect("/products");
+        return res.redirect("/");
       })
       .catch((error) => {
         console.log(error);
@@ -78,7 +78,7 @@ const productController = {
 showFormUpdate: (req, res) => {
     let id = req.params.id;
 
-    movie.findByPk(id)
+    producto.findByPk(id)
     .then((result) => {
     console.log(result);
     return res.render("product-update", { seleccionado: result });

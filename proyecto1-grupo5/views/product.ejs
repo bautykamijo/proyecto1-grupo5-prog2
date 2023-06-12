@@ -30,12 +30,20 @@
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                     
                 </form>
-                <form class="form" action="/product/delete/<% seleccionado.id %>" method="POST">
-                    <input type="text" hidden name="id" id="" value="<%= seleccionado.id %>">
-                    <input class="form-input" value="Eliminar" type="submit">
+
+                <br><br>
+
+                <form class="form" action="/product/update/<%= seleccionado.id %>" method="get"> 
+                    <button type="submit" class="buy-now-button">MODIFICAR</button>      
                 </form>
-                <form action=""></form>
-                <hr>
+
+
+                <form class="form" action="/product/delete" method="POST">
+                    <input type="hidden" name="id" value="<%= seleccionado.id %>">
+                    <input class="form-input" value="ELIMINAR" name="eliminar" type="submit">
+                </form>
+                
+
             </div>
         </div>
     </div>

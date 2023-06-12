@@ -3,33 +3,23 @@
     <%- include('./partials/headerLogueado') %>
   <% } else { %>
     <%- include('./partials/header') %>
-<% } %>
-    <main class="container main-container">
-     
+<% } %>     
        
           
-            <!-- Formulario de Registro -->
+      <div class="container products-wrapper">
+        <div class="row">
+            <h2 class="col-12 centrarlo"> 
+              <form class="registrarme" action="/product/update/<%= seleccionado.id %>" method="POST">
+                    <h2>Modificar</h2>
+                    <div><input type="hidden" placeholder="Imagen" name="usuario_id" value="<%= locals.user.id %>"> </div>
+                    <div><input type="text" placeholder="Imagen" name="img" value="<%= seleccionado.img %>"></div>
+                    <div><input type="text" placeholder="Nombre del producto:" name="nombre" value="<%= seleccionado.nombre %>"></div>
+                    <div><input type="text" placeholder="Descripcion:" name="descripcion" value="<%= seleccionado.descripcion %>"></div>
+                    <button type="submit" class="verdaro">Actualizar</button>
+                </form>
+            </h2>
 
-            <form class="form" action="/product/update/<%= seleccionado.id %>" method="POST">
-              <div class="title">Actualizar Producto</div>
-
-              <div><input type="hidden" name="usuario_id" value="<%= locals.user.id %>"></div>
-              
-              <div class="input-container ic1">
-                <input id="nombre" class="input" type="text" name="nombre" placeholder="Nombre" value="<%= seleccionado.nombre %>" />
-              </div>
-              <div class="input-container ic2">
-                <input id="descripcion" class="input" type="text" name="descripcion" placeholder="Descripcion" value="<%=seleccionado.descrpicion %>"/>
-              </div>
-              <div class="input-container ic2">
-                <input id="img" class="input" type="text" name="img" placeholder="imagen"  value="<%= seleccionado.img %>" />
-              </div>
-
-              <button type="text" class="submit">Actualizar</button>
-  
-  
-            </form>
-            
-
-      
-    </main>
+          </div>
+        </div>
+ 
+    <%- include('./partials/footer') %>

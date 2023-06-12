@@ -98,8 +98,8 @@ loginPost: function (req,res) {
             let claveCorrecta = bcrypt.compareSync(contra, resultado.contrasenia);
 
             if (claveCorrecta) {
-
                 req.session.user = resultado.dataValues;
+                console.log(req.session.user)
 
                     if (req.body.rememberme != undefined) {
                         res.cookie('userId', resultado.id, {maxAge: 1000 * 60 * 15})}

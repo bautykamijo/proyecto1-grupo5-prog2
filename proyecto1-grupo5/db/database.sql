@@ -45,16 +45,16 @@ created_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
  );
  INSERT INTO productos(id,usuario_id,nombre,descripcion,img)  
 VALUES
-(1,1,"Camiseta de Racing Club","Camiseta titular de Racing en el torneo local 2021. En este torneo finalizo en la 15° posicion. Su maxima figura fue Lisandro Lopez.", 'camiseta-racing.jpg'),
-(2,2,"Camiseta de Boca Juniors","Camiseta titular de Boca Juniors en el torneo local 2022. En este torneo finalizo en la 1° posicion, ganandole el campeonato a Racing en la última fecha. Su maxima figura fue Luca Langoni.", 'camiseta-boca.jpg'),
-(3,3,"Camiseta de River Plate","Camiseta suplente de River en el torneo local 2011. En este torneo finalizo en la 9° posicion, luego debió jugar la promoción con Belgrano de Córdoba. Terminó descendiendo a la Primera B Nacional", 'camiseta-river.jpg'),
-(4,4,"Camiseta de Estudiantes de la Plata","Camiseta titular de Estudiantes en la Copa Libertadores de 1970 dirigidos por Osvaldo Zubeldía, donde se consagro campeón. Aquí recibe el titulo del primer tricampeón.", 'camiseta-estudiantes.jpg'),
-(5,5,"Camiseta de Defensa y Justicia","Camiseta titular de Defensa y Justicia en el torneo local 2022. En este torneo finalizo en la 12° posicion. Su maxima figura fue Nicolás Fernandez.", 'camiseta-dyj.jpg'),
-(6,1,"Camiseta del Club Atletico Huracan","Camiseta titular de Huracan en el torneo local 2015. En este torneo finalizo en la 23° posicion, siendo en ese mismo año el subcampeón de la Copa Sudamericana. Su maxima figura fue Patricio Toranzo.", 'camiseta-huracan.jpg'),
-(7,2,"Camiseta del Club Atletico Lanus","Camiseta titular de Lanus en el torneo local 2022. En este torneo finalizo en la 27° posicion. Su maxima figura fue Jose Sand.", 'camiseta-lanus.jpg'),
-(8,3,"Camiseta del Club Atletico Banfield","Camiseta titular de Banfield en el torneo local 2018. En este torneo finalizo en la 16° posicion. Su maxima figura fue Dario Cvitanich.", 'camiseta-banfield.jpg'),
-(9,4,"Camiseta de San Lorenzo","Camiseta suplente de San Lorenzo en el torneo local 2014. En este torneo finalizo en la 8° posicion. Su maxima figura fue Leandro Romagnoli.", 'camiseta-sanlorenzo.jpg'),
-(10,5,"Camiseta de Velez Sarfield","Camiseta titular de Velez en el torneo local 2021. En este torneo finalizo en la 5° posicion. Su maxima figura fue Lucas Janson.", 'camiseta-velez.jpg');
+(1,1,"Camiseta de Racing Club","Camiseta titular de Racing en el torneo local 2021. En este torneo finalizo en la 15° posicion. Su maxima figura fue Lisandro Lopez.", '/images/products/camiseta-racing.jpg'),
+(2,2,"Camiseta de Boca Juniors","Camiseta titular de Boca Juniors en el torneo local 2022. En este torneo finalizo en la 1° posicion, ganandole el campeonato a Racing en la última fecha. Su maxima figura fue Luca Langoni.", '/images/products/camiseta-boca.jpg'),
+(3,3,"Camiseta de River Plate","Camiseta suplente de River en el torneo local 2011. En este torneo finalizo en la 9° posicion, luego debió jugar la promoción con Belgrano de Córdoba. Terminó descendiendo a la Primera B Nacional", '/images/products/camiseta-river.jpg'),
+(4,4,"Camiseta de Estudiantes de la Plata","Camiseta titular de Estudiantes en la Copa Libertadores de 1970 dirigidos por Osvaldo Zubeldía, donde se consagro campeón. Aquí recibe el titulo del primer tricampeón.", '/images/products/camiseta-estudiantes.jpg'),
+(5,5,"Camiseta de Defensa y Justicia","Camiseta titular de Defensa y Justicia en el torneo local 2022. En este torneo finalizo en la 12° posicion. Su maxima figura fue Nicolás Fernandez.", '/images/products/camiseta-dyj.jpg'),
+(6,1,"Camiseta del Club Atletico Huracan","Camiseta titular de Huracan en el torneo local 2015. En este torneo finalizo en la 23° posicion, siendo en ese mismo año el subcampeón de la Copa Sudamericana. Su maxima figura fue Patricio Toranzo.", '/images/products/camiseta-huracan.jpg'),
+(7,2,"Camiseta del Club Atletico Lanus","Camiseta titular de Lanus en el torneo local 2022. En este torneo finalizo en la 27° posicion. Su maxima figura fue Jose Sand.", '/images/products/camiseta-lanus.jpg'),
+(8,3,"Camiseta del Club Atletico Banfield","Camiseta titular de Banfield en el torneo local 2018. En este torneo finalizo en la 16° posicion. Su maxima figura fue Dario Cvitanich.", '/images/products/camiseta-banfield.jpg'),
+(9,4,"Camiseta de San Lorenzo","Camiseta suplente de San Lorenzo en el torneo local 2014. En este torneo finalizo en la 8° posicion. Su maxima figura fue Leandro Romagnoli.", '/images/products/camiseta-sanlorenzo.jpg'),
+(10,5,"Camiseta de Velez Sarfield","Camiseta titular de Velez en el torneo local 2021. En este torneo finalizo en la 5° posicion. Su maxima figura fue Lucas Janson.", '/images/products/camiseta-velez.jpg');
 
  
 

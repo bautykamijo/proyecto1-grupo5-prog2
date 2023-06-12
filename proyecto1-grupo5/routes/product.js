@@ -9,10 +9,10 @@ router.get('/results', productController.resultados);
 router.get('/add', productController.showForm);
 router.post('/add', productController.store);
 
+router.get("/update/:id", productController.showFormUpdate)
+router.post("/update/:id",productController.update)
+
 router.post("/delete",productController.delete)
 
-router.get("/update/:id", productController.showFormUpdate)
-
-router.post("/update/:id",productController.update)
 module.exports = router;
 
