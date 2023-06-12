@@ -11,7 +11,6 @@
 
 
 
-<<<<<<< HEAD
 
                     showFormUpdate: (req, res) => {
                         let id = req.params.id;
@@ -43,10 +42,10 @@
                   
                   
                     }
-=======
+
                     <%= locals.user.nombre %>
 
 
 
                     
->>>>>>> 77e53ca5e8c5f3c763eba2b28cf3c9cdeed94dcf
+
