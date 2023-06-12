@@ -64,9 +64,10 @@ const productController = {
   store : (req, res) => {
 
       let info = req.body;
+
       producto.create(info)
       .then((result) => {
-        return res.redirect("/products/all");
+        return res.redirect("/products");
       })
       .catch((error) => {
         console.log(error);
@@ -108,7 +109,7 @@ movie.update(info, {
   delete: function (req,res) {
     let idParaEliminar = req.body.id;
 
-    movie.destroy({
+    producto.destroy({
       where: [{ id: idParaEliminar }],
     })
     .then((result) => {

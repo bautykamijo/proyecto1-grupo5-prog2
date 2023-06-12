@@ -9,11 +9,13 @@
         </div>
         <!-- Show the "ultimos" products -->
         <h2 class="col-12"> 
-            <form action="/users/profile" method="get">
-                <div><input type="text" placeholder="Imagen" > </div>
-                <div><input type="text" placeholder="Nombre del producto:"> </div>
-                <div><input type="text" placeholder="Descripcion:"> </div>
-                <button class="verdaro">Agregar Producto</button>
+            <form action="/product/add" method="post">
+                
+                <div><input type="hidden" placeholder="Imagen" name="usuario_id" value="<%= locals.user.id %>"> </div>
+                <div><input type="text" placeholder="Imagen" name="img"> </div>
+                <div><input type="text" placeholder="Nombre del producto:" name="nombre"> </div>
+                <div><input type="text" placeholder="Descripcion:" name="descripcion"> </div>
+                <button type="submit" class="verdaro">Agregar Producto</button>
             </form>
         </h2>
 
