@@ -125,8 +125,9 @@ loginPost: function (req,res) {
 
     },
     logout: function(req, res) {
+        console.log("LOGOUT METHOD")
         res.clearCookie('userId');
-
+        req.session.user = undefined
         return res.render('login');
     },
 };
