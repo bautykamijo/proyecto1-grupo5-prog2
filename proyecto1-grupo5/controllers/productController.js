@@ -76,23 +76,23 @@ const productController = {
 
 showFormUpdate: (req, res) => {
     let id = req.params.id;
-    movie
-        .findByPk(id)
-        .then((result) => {
-        console.log(result);
-        return res.render("product-update", { seleccionado: result });
-        })
-        .catch((err) => {
-        console.log(err);
-        });
+
+    movie.findByPk(id)
+    .then((result) => {
+    console.log(result);
+    return res.render("product-update", { seleccionado: result });
+    })
+    .catch((err) => {
+    console.log(err);
+    });
 },
 
 
 update: (req, res) => {
 let id = req.params.id;
 let info = req.body;
-movie
-    .update(info, {
+
+movie.update(info, {
     where: [{ id: id }],
     })
     .then((result) => {

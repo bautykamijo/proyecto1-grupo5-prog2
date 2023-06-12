@@ -13,7 +13,7 @@
             <form class="form" action="/product/update/<%= seleccionado.id %>" method="POST">
               <div class="title">Actualizar Producto</div>
 
-              <!-- <input type="hidden" name="id" value=""> -->
+              <div><input type="hidden" name="usuario_id" value="<%= locals.user.id %>"></div>
               
               <div class="input-container ic1">
                 <input id="nombre" class="input" type="text" name="nombre" placeholder="Nombre" value="<%= seleccionado.nombre %>" />
