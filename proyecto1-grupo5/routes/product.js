@@ -2,11 +2,14 @@ const express = require('express');
 const router = express.Router();
 const productController = require('../controllers/productController');
 
-router.get('/all', productController.findAll);
+router.get('/', productController.findAll);
 router.get('/detail/:id', productController.detalle);
-router.get('/add', productController.agregarProducto);
+router.get('/results', productController.resultados);
 
-router.post("/delete/:id",productController.delete)
+router.get('/add', productController.showForm);
+router.post('/add', productController.store);
+
+router.post("/delete",productController.delete)
 
 router.get("/update/:id", productController.showFormUpdate)
 

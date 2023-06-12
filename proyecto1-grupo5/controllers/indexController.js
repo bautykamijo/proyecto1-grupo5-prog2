@@ -3,30 +3,16 @@ let db = require('../database/models');
 
 const indexController = {
 
-    indice :  (req, res) => {
+    findAll :  (req, res) => {
 
     db.Producto.findAll()
-    .then(function (resultado) {
-        console.log(resultado);
-        return res.render('index', {lista : resultado});
-    })
-    .catch();
-        
-
-
-    },
-
-    resultados : function (req, res) {
-        let busqueda = req.query.Producto
-
-        return res.render('search-results', {lista : datos.productos,
-                                    comments : datos.comentarios});
-
-                                    
-    },
-
-
-
+    .then(function (result) {
+        return res.render("index", { lista : result });
+      })
+      .catch(function (err) {
+        console.log(err);
+      });
+  }
 }
 
 module.exports = indexController;

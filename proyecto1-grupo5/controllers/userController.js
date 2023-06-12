@@ -5,13 +5,25 @@ const bcrypt = require("bcryptjs");
 const userController = {
     
 perfil: function (req,res) {
-    res.render(
-        'profile', {lista : datos,
-                     comments : datos.comentarios} 
-    )},
+    let indice = req.params.id;
+    
+      let rel = {include : [
+        {association : "productos"},
+        {association : "comentarios"},
+      ]};
+
+      user.findByPk(indice, rel)
+      .then(function(resultados) {
+          console.log(resultados);
+        return res.render('profile', {lista : resultados});
+      })
+      .catch(function(error) {
+        console.log(error);
+      });
+},
+
 editar: function (req,res) {
-    res.render(
-    "profile-edit", {lista : datos,})
+    res.render("profile-edit")
 },
 
 create: function(req, res) {
@@ -115,7 +127,7 @@ loginPost: function (req,res) {
     logout: function(req, res) {
         res.clearCookie('userId');
 
-        return res.render('login');
+        return res.render('login');m
     },
 };
 
