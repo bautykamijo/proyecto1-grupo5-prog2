@@ -5,8 +5,14 @@ const indexController = {
 
     findAll :  (req, res) => {
 
-    db.Producto.findAll()
+      let rel = {include : [
+        {association : "usuario"},
+        {association : "comentarios"},
+      ]};
+
+    db.Producto.findAll(rel)
     .then(function (result) {
+      
         return res.render("index", { lista : result });
       })
       .catch(function (err) {

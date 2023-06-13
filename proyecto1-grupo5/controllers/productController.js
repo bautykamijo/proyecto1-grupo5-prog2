@@ -1,14 +1,21 @@
 const db = require("../database/models");
 let producto = db.Producto;
+let comentario = db.Comentario
 let op = db.Sequelize.Op;
 
 
 const productController = {
 
   findAll : (req, res) => {
-    producto.findAll()
+
+    let rel = {include : [
+      {association : "usuario"},
+      {association : "comentarios"},
+    ]};
+
+    producto.findAll(rel)
     .then(function (result) {
-  
+    
       return res.render("index", { lista : result });
     })
     .catch(function (err) {
@@ -27,6 +34,8 @@ const productController = {
 
       producto.findByPk(indice, rel)
       .then(function(resultados) {
+
+        //return res.send(resultados);
         return res.render('product', {seleccionado : resultados});
       })
       .catch(function(error) {
@@ -34,23 +43,41 @@ const productController = {
       });
     }, 
 
+
+//VER COMO HACER PARA DIVIDIR RESULTADOS POR NOMBRE Y POR DESCRIPCION
+
   resultados : function (req, res) {
 
       let busqueda = req.query.search;
 
-      let filtro = {where : [{nombre : {[op.like] : "%" + busqueda + "%"}}],
-                    order : [['created_at', 'DESC']]
-                  };
+      let filtroNombre = {where : [{nombre : {[op.like] : "%" + busqueda + "%"}}],
+                          order : [['created_at', 'DESC']]};
 
-      producto.findAll(filtro)
-      .then(function (result) {
-        console.log(result);
-        return res.render("search-results", {lista : result});
-      })
+      let filtroDescripcion = {where : [{descripcion : {[op.like] : "%" + busqueda + "%"}}],
+      order : [['created_at', 'DESC']]};
+
+
+      let resultadosNombre = [];
+      let resultadosDescripcion = [];
+    
+      producto.findAll(filtroNombre)
+        .then(function (result) {
+          resultadosNombre = result;
+          return producto.findAll(filtroDescripcion);
+        })
+        .then(function (resultados) {
+          resultadosDescripcion = resultados;
+          return res.render("search-results", { 
+            lista: resultadosNombre,
+            descriptivo: resultadosDescripcion 
+          });
+        })
+
       .catch(function (error) {
         console.log(error);
       });                       
     },
+
 
   showForm: (req, res) => {
     if (req.session.user != undefined) {

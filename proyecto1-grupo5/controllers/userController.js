@@ -15,7 +15,6 @@ perfil: function (req,res) {
 
       user.findByPk(indice, rel)
       .then(function(resultados) {
-
         return res.render('profile', {lista : resultados});
       })
       .catch(function(error) {
@@ -24,8 +23,51 @@ perfil: function (req,res) {
 },
 
 editar: function (req,res) {
-    res.render("profile-edit")
+    let id = req.params.id;
+
+    user.findByPk(id)
+    .then((result) => {
+    
+    
+    return res.render("profile-edit", { seleccionado: result });
+    })
+    .catch((err) => {
+    console.log(err);
+    });
+
 },
+
+editarPost: function (req,res) {
+
+
+    let idUsuario = req.params.id;
+    let info = req.body;
+
+    user.update(info, {
+    where: [{ id: idUsuario }],
+    })
+    .then((result) => {
+        let errors = {};
+
+        if (req.body.mail == "") {
+            errors.message = "El email está vacio";
+            res.locals.errors = errors;
+            return res.render('profile-edit');
+
+        } else if(req.body.contrasenia == ""){
+            errors.message = "La clave está vacia";
+            res.locals.errors = errors;
+            return res.render('profile-edit');
+        } else {
+    return res.redirect("/profile/" + idUsuario);
+        }
+    })
+    .catch((err) => {
+    console.log(err);
+    });
+
+        
+    },
 
 create: function(req, res) {
     return res.render('register');

@@ -21,8 +21,24 @@
         <div class="row">
             <article class="col-12 col-lg-8 product-detail-info">
                 <img src="<%= seleccionado.img%>" alt="" class="<%= seleccionado.nombre %>">
-                <p class="product-detail-description"><%= seleccionado.descripcion %></p>
+                <p class="product-detail-description" > <span style="font-weight: 600; font-size: 22px;">Descripción:</span> <br>
+                    <%= seleccionado.descripcion %></p>
+                <p class="product-detail-description" style="color:rgb(133, 128, 128) ; font-size: 15px;"> Publicado por: <a style="color: blue;" href="/users/profile/<%= seleccionado.usuario.id %>"><%= seleccionado.usuario.mail %></a> <br>
+                    <%= seleccionado.created_at %></p>
+
+
+                    <!-- Como hago que esto funcione -->
+
+
+                    <% if (seleccionado.created_at != seleccionado.updated_at){ %>
+                <p class="product-detail-description" style="color:rgb(133, 128, 128) ; font-size: 15px;"> Ultima vez editado: <br>
+                    <%= seleccionado.updated_at %></p>
+                    <% } %>
                 
+                    <!-- Hasta aca -->
+
+
+
                 <% if (locals.user && seleccionado.usuario_id == locals.user.id){ %>
                     <form class="form" action="/product/update/<%= seleccionado.id %>" method="get"> 
                         <button type="submit" class="buy-now-button">MODIFICAR</button>      
@@ -34,10 +50,22 @@
                 <% } %>
             
             </article>
+
+        
             <div class="col-12 col-lg-4">
                 <section class="comments">
+                    <%  for( let i = 0; i < seleccionado.comentarios.length; i++ ) { %>
+                        <article>
+                            <img src=<%=seleccionado.comentarios[i].img%> alt="<%=seleccionado.usuario.nombre%>">
+                            <div class="data">
+                                <p class="user">
+                                <strong> <a href="/users/profile"><%=seleccionado.usuario.nombre%> </a> </strong>
+                                <%=seleccionado.comentarios[i].texto%></p>
+                            </div>
+                        </article>
+                        <% } %> 
                 </section>
-                <form class="form" action="/users/profile" method="get">
+                <form class="form" action="/product/detail/<%= seleccionado.id %>" method="get">
                     <input class="form-input" type="text" value="" placeholder="Agregar comentario">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                     

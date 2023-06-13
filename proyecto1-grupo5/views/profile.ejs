@@ -10,9 +10,11 @@
         <div class="data-container col-6">
             <div class="d-flex align-items-center ">
                 <h1 class="main-title"><%=lista.nombre%> 
-                    <a href="/users/profile-edit">
+                    <% if (locals.user && lista.id == locals.user.id){ %>
+                    <a href="/users/profile-edit/<%=lista.id%>">
                         <i class="fas fa-cog"></i>
                     </a>
+                    <% } %>
                 </h1>
                 <a class="btn mt-3 ml-4" href="">SEGUIR</a>
             </div>
@@ -46,7 +48,7 @@
                     <article class="product-box_data">
                         <h2><%= productos.nombre %></h2>
                         <p><%= productos.descripcion %></p>
-                        <p>Comentarios:  </p>
+                        <p>Comentarios: <%=lista.comentarios.length%> </p>
                     </article>
                 </a>
             </section>

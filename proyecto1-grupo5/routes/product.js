@@ -6,6 +6,7 @@ router.get('/', productController.findAll);
 router.get('/detail/:id', productController.detalle);
 router.get('/results', productController.resultados);
 
+
 router.get('/add', productController.showForm);
 router.post('/add', productController.store);
 

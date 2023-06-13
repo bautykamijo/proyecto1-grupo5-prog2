@@ -4,7 +4,9 @@ const userController = require("../controllers/userController")
 /* GET users listing. */
 
 router.get("/profile/:id",userController.perfil)
-router.get("/profile-edit",userController.editar)
+
+router.get("/profile-edit/:id",userController.editar)
+router.post("/profile-edit/:id",userController.editarPost)
 
 router.get('/register', userController.create)
 router.post("/register", userController.store)

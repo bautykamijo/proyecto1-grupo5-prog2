@@ -5,15 +5,17 @@
     <%- include('./partials/header') %>
 <% } %>
 
+<% if (lista.length != 0){ %>
+
 <div class="container products-wrapper">
     <div class="row">
         <div class="col-12">
-            <h2 class="products-title">Tus resultados de busqueda son: </h2>
+            <h2 class="products-title">Tus resultados de busqueda según el nombre son: </h2>
         </div>
         <!-- Show the "ultimos" products -->
         
         
-        <%  for( let i = 1; lista.length ; i++ ) { %>
+        <%  for( let i = 0; i < lista.length ; i++ ) { %>
             <div class="col-12 col-sm-6 col-lg-3">
             <section class="product-box">
 
@@ -24,7 +26,7 @@
                     <article class="product-box_data cajita">
                         <h2><%= lista[i].nombre %></h2>
                         <p><%= lista[i].descripcion %></p>
-                        <p>Comentarios: <%= comments.length %> </p>
+                        <p>Comentarios:  </p>
                     </article>
                 </a>
             </section>
@@ -32,7 +34,55 @@
         <% } %>
     </div>
 </div>
-      
 
+<% } %>
+
+
+<% if (descriptivo.length != 0){ %>
+
+<div class="container products-wrapper">
+    <div class="row">
+        <div class="col-12">
+            <h2 class="products-title">Tus resultados de busqueda según la descripción son: </h2>
+        </div>
+        <!-- Show the "ultimos" products -->
+        
+        
+        <%  for( let i = 0; i < descriptivo.length ; i++ ) { %>
+            <div class="col-12 col-sm-6 col-lg-3">
+            <section class="product-box">
+
+                <a href="/product/detail/<%= descriptivo[i].id %>">
+                    <figure class="product-box_image">
+                        <img class="camisetas" src= <%= descriptivo[i].img %> alt="foto de <%= descriptivo[i].nombre %>">
+                    </figure>
+                    <article class="product-box_data cajita">
+                        <h2><%= descriptivo[i].nombre %></h2>
+                        <p><%= descriptivo[i].descripcion %></p>
+                        <p>Comentarios:  </p>
+                    </article>
+                </a>
+            </section>
+        </div>
+        <% } %>
+    </div>
+</div>
+
+<% } %> 
+
+<% if (descriptivo.length == 0 && lista.length == 0 ){ %>
+    <br><br>
+    <div class="col-12" style=" display: flex;
+                                flex-direction: column;
+                                flex-wrap: wrap;
+                                align-content: flex-start;
+                                align-items: flex-end;">
+        <h2 class="products-title" style="padding-left: 40px;">No existe ningún resultado que coincida con su busqueda!</h2>
+    
+    <br><br><br><br><br><br><br>
+    
+    <img style="width: 600px;" src="https://cdn-icons-png.flaticon.com/512/6202/6202861.png" alt="">
+</div>
+    <% } %>   
 
 <%- include('./partials/footer') %>

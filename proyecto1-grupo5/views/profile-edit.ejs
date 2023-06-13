@@ -4,21 +4,26 @@
 <!-- Novedades -->
 <div class="container products-wrapper">
     <div class="row">
-        <div class="col-12">
-            <h2 class="products-title">Editar mi perfil</h2>
-        </div>
+    
         <!-- Show the "ultimos" products -->
-        <h2 class="col-12">            
-            <form action="/users/profile" method="get">
-            <div><input type="text" placeholder="Nombre completo:" > </div>
-            <div><input type="email" placeholder="Email:"> </div>
-            <div><input type="password" placeholder="Constraseña:"> </div>
-            <div><input type="date" placeholder="Fecha de nacimiento:"> </div>
-            <div><input type="number" placeholder="Numero de documento:"> </div>
-            <div><input type="file" placeholder="Foto de Perfil:"> </div>
+        <h2 class="col-12 centrarlo"> <i> <br> 
+            <form class="registrarme" action="/users/profile-edit/6" method="post">
+                <h2>Editar Perfil</h2>
+                <% if (locals.errors) { %>
+                    <p style="color: red; font-size: 15px;"><%= errors.message %></p>
+              <% } %>
+            <div><input type="text" name="nombre" placeholder="Nombre completo:" value="<%= seleccionado.nombre %>" > </div>
+            <div><input type="email" name="mail" placeholder="Email:" value="<%= seleccionado.mail %>" > </div>
+            <div><input type="password"name="contrasenia" placeholder="Constraseña:" value="<%= seleccionado.contrasenia %>"> </div>
+            <div><input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento:" value="<%= seleccionado.fecha_nacimiento %>"> </div>
+            <div><input type="number"name="dni" placeholder="Numero de documento:" value="<%= seleccionado.dni %>"> </div>
+            <div><input type="text" name="foto_perfil" placeholder="Foto de Perfil:" value="<%= seleccionado.foto_perfil %>"> </div>
+            <br>
             <button class="verdaro">Editar Perfil</button>
         </form>
         <br><br>
         </h2>
+    </div>
+</div>
 
 <%- include('./partials/footer') %>
