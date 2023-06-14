@@ -56,10 +56,10 @@
                 <section class="comments">
                     <%  for( let i = 0; i < seleccionado.comentarios.length; i++ ) { %>
                         <article>
-                            <img src=<%=seleccionado.comentarios[i].img%> alt="<%=seleccionado.usuario.nombre%>">
+                            <img src=<%=seleccionado.comentarios[i].usuario.foto_perfil%> alt="<%=seleccionado.comentarios[i].usuario.nombre%>">
                             <div class="data">
                                 <p class="user">
-                                <strong> <a href="/users/profile"><%=seleccionado.usuario.nombre%> </a> </strong>
+                                <strong> <a href="/users/profile"><%=seleccionado.comentarios[i].usuario.nombre%> </a> </strong>
                                 <%=seleccionado.comentarios[i].texto%></p>
                             </div>
                         </article>

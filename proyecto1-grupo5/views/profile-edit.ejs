@@ -1,5 +1,9 @@
 <%- include('./partials/head') %>
-<%- include('./partials/headerLogueado') %>
+<% if (locals.user != null) { %>
+    <%- include('./partials/headerLogueado') %>
+  <% } else { %>
+    <%- include('./partials/header') %>
+<% } %>
 
 <!-- Novedades -->
 <div class="container products-wrapper">
@@ -7,7 +11,7 @@
     
         <!-- Show the "ultimos" products -->
         <h2 class="col-12 centrarlo"> <i> <br> 
-            <form class="registrarme" action="/users/profile-edit/6" method="post">
+            <form class="registrarme" action="/users/profile-edit/<%= seleccionado.id %>" method="post">
                 <h2>Editar Perfil</h2>
                 <% if (locals.errors) { %>
                     <p style="color: red; font-size: 15px;"><%= errors.message %></p>

@@ -29,7 +29,7 @@ const productController = {
     
       let rel = {include : [
         {association : "usuario"},
-        {association : "comentarios"},
+        {association : "comentarios", include: [{association: "usuario"}]}, 
       ]};
 
       producto.findByPk(indice, rel)
@@ -44,7 +44,7 @@ const productController = {
     }, 
 
 
-//VER COMO HACER PARA DIVIDIR RESULTADOS POR NOMBRE Y POR DESCRIPCION
+
 
   resultados : function (req, res) {
 
@@ -132,7 +132,7 @@ producto.update(info, {
 },
 
   
-  delete: function (req,res) {
+delete: function (req,res) {
 
     let idParaEliminar = req.body.id;
 

@@ -6,7 +6,7 @@ create table usuarios
 (id INT UNSIGNED PRIMARY KEY AUTO_INCREMENT,
 nombre VARCHAR(30) NOT NULL,
 mail VARCHAR(50) NOT NULL,
-contrasenia VARCHAR(100) NOT NULL,
+contrasenia VARCHAR(500) NOT NULL,
 foto_perfil VARCHAR(200),
 dni INT NOT NULL UNIQUE,
 fecha_nacimiento DATE NOT NULL,

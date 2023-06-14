@@ -1,5 +1,9 @@
 <%- include('./partials/head') %>
-<%- include('./partials/headerLogueado') %>
+<% if (locals.user != null) { %>
+    <%- include('./partials/headerLogueado') %>
+  <% } else { %>
+    <%- include('./partials/header') %>
+<% } %>
 
 <!-- Datos del usuario -->
 <section class="info-usuario container products-wrapper">
