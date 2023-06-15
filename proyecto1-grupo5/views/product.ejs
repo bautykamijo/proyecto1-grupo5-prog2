@@ -79,7 +79,13 @@
                     
                 </form>
 
-                <% } %> 
+                <% } else { %> 
+                    <p style="color: red; font-size: 17px; font-weight: 600;display: flex;">Debes estar logueado para comentar!</p>
+                    <p style="color: rgba(90,194,231,255); font-size: 15px; font-weight: 600;display: flex; justify-content: center; text-decoration: underline;"><a href="/users/login">Iniciar Sesion</a></p>
+                    <% } %> 
+
+
+
 
                 <br><br>
 

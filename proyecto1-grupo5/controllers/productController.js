@@ -45,6 +45,8 @@ const productController = {
 
 
     showFormComment: (req, res) => {
+
+
       if (req.session.user != undefined) {
         return res.render("product");
       } else{
@@ -55,6 +57,7 @@ const productController = {
       storeComments : (req, res) => {
 
         let info = req.body;
+
 
   
         comentario.create(info)
