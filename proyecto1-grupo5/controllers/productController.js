@@ -10,8 +10,8 @@ const productController = {
 
     let rel = {include : [
       {association : "usuario"},
-      {association : "comentarios"},
-    ]};
+      {association : "comentarios"}],
+      order : [['created_at', 'DESC']]};
 
     producto.findAll(rel)
     .then(function (result) {
@@ -42,6 +42,29 @@ const productController = {
         console.log(error);
       });
     }, 
+
+
+    showFormComment: (req, res) => {
+      if (req.session.user != undefined) {
+        return res.render("product");
+      } else{
+        return res.redirect("/users/login")};
+      },
+
+
+      storeComments : (req, res) => {
+
+        let info = req.body;
+
+  
+        comentario.create(info)
+        .then((result) => {
+          return res.redirect("/product/detail/" + info.producto_id);
+        })
+        .catch((error) => {
+          console.log(error);
+        });
+      },
 
 
 

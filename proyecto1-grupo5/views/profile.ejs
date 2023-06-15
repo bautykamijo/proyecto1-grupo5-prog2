@@ -40,6 +40,18 @@
         </div>
         <!-- Show mis productos -->
 
+        <% if (lista.productos.length == 0) { %>
+            
+        <div class="col-12">
+            <br><br><br><br>
+            <h2 class="products-title" style="display: flex; justify-content: center; font-size: 2.8em;">¡No has publicado ningun producto!</h2>
+        </div>
+
+        <% } else { %>
+
+
+
+
         <%  for( let i = 0; i < lista.productos.length; i++ ) { %>
             <% let productos = lista.productos[i] %>
             <div class="col-12 col-sm-6 col-lg-3">
@@ -60,7 +72,7 @@
         <% } %>
     </div>
 </div>
-
+<% } %>
 <!-- /Mis productos -->
 
 <%- include('./partials/footer') %>

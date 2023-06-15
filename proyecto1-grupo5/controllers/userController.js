@@ -52,13 +52,16 @@ const userController = {
             res.locals.errors = errors;
             return res.render('profile-edit');
 
-        } else if (req.body.contrasenia == "") {
-            errors.message = "La clave está vacia";
-            res.locals.errors = errors;
-            return res.render('profile-edit');
-        } else {
+         } else {
+
+         if (req.body.contrasenia != "") {
             const newPass = bcrypt.hashSync(info.contrasenia, 10)
-            info.contrasenia = newPass
+            info.contrasenia = newPass}
+            
+            else {
+                info.contrasenia = info.contraVieja
+            }
+
             user.update(info, {
                 where: [{ id: idUsuario }],
             })
@@ -75,7 +78,11 @@ const userController = {
     },
 
     create: function (req, res) {
+        if (req.session.user != undefined) {
+            return res.redirect('/');
+        } else {
         return res.render('register');
+         }
     },
 
 
@@ -175,10 +182,14 @@ const userController = {
 
     },
     logout: function (req, res) {
+        if (req.session.user == undefined) {
+            return res.redirect('/');
+        } else {
         console.log("LOGOUT METHOD")
         res.clearCookie('userId');
         req.session.user = undefined
         return res.render('login');
+        }
     },
 };
 

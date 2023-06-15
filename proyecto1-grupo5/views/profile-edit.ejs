@@ -16,9 +16,10 @@
                 <% if (locals.errors) { %>
                     <p style="color: red; font-size: 15px;"><%= errors.message %></p>
               <% } %>
+            <div><input type="hidden" name="contraVieja" placeholder="" value="<%= seleccionado.contrasenia %>" > </div>
             <div><input type="text" name="nombre" placeholder="Nombre completo:" value="<%= seleccionado.nombre %>" > </div>
             <div><input type="email" name="mail" placeholder="Email:" value="<%= seleccionado.mail %>" > </div>
-            <div><input type="password"name="contrasenia" placeholder="Constraseña:" value="<%= seleccionado.contrasenia %>"> </div>
+            <div><input type="password"name="contrasenia" placeholder="Nueva constraseña:" value=""> </div>
             <div><input type="date" name="fecha_nacimiento" placeholder="Fecha de nacimiento:" value="<%= seleccionado.fecha_nacimiento %>"> </div>
             <div><input type="number"name="dni" placeholder="Numero de documento:" value="<%= seleccionado.dni %>"> </div>
             <div><input type="text" name="foto_perfil" placeholder="Foto de Perfil:" value="<%= seleccionado.foto_perfil %>"> </div>

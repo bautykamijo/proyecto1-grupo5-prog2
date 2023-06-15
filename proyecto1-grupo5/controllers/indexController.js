@@ -7,8 +7,8 @@ const indexController = {
 
       let rel = {include : [
         {association : "usuario"},
-        {association : "comentarios"},
-      ]};
+        {association : "comentarios"}],
+        order : [['created_at', 'DESC']]};
 
     db.Producto.findAll(rel)
     .then(function (result) {

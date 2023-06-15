@@ -54,22 +54,32 @@
         
             <div class="col-12 col-lg-4">
                 <section class="comments">
+                    <p > <span style="font-weight: 600; font-size: 22px;">COMENTARIOS:</span> </p>
+                    <br><br>
                     <%  for( let i = 0; i < seleccionado.comentarios.length; i++ ) { %>
                         <article>
                             <img src=<%=seleccionado.comentarios[i].usuario.foto_perfil%> alt="<%=seleccionado.comentarios[i].usuario.nombre%>">
                             <div class="data">
                                 <p class="user">
-                                <strong> <a href="/users/profile"><%=seleccionado.comentarios[i].usuario.nombre%> </a> </strong>
+                                <strong> <a href="/users/profile/<%=seleccionado.comentarios[i].usuario.id%>"><%=seleccionado.comentarios[i].usuario.nombre%> </a> </strong>
                                 <%=seleccionado.comentarios[i].texto%></p>
                             </div>
                         </article>
                         <% } %> 
                 </section>
-                <form class="form" action="/product/detail/<%= seleccionado.id %>" method="get">
-                    <input class="form-input" type="text" value="" placeholder="Agregar comentario">
+
+                <% if (locals.user != null) { %>
+
+                <form class="form" action="/product/comments" method="post">
+                    <div><input type="hidden" placeholder="usuario_id" name="usuario_id" value="<%= locals.user.id %>"> </div>
+
+                    <div><input type="hidden" placeholder="id" name="producto_id" value="<%= seleccionado.id %>"> </div>
+                    <input class="form-input" type="text" value="" placeholder="Agregar comentario" name="texto">
                     <button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
                     
                 </form>
+
+                <% } %> 
 
                 <br><br>
 
