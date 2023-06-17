@@ -99,7 +99,24 @@ const userController = {
             errors.message = "La clave está vacia";
             res.locals.errors = errors;
             return res.render('register');
-        } else {
+
+        }  else {
+
+            let mailBuscado = req.body.mail;
+
+            let criterio = {where: [{ mail: mailBuscado }]};
+
+            user.findOne(criterio)
+            .then(function (respuesta) {
+                
+            if (respuesta != undefined) {
+                errors.message = 'El email ya esta en uso!';
+                res.locals.errors = errors;
+                //return res.send(criterio);
+                return res.render('register');
+            
+        
+            } else {
 
             let info = req.body
 
@@ -111,9 +128,7 @@ const userController = {
                 contrasenia: bcrypt.hashSync(req.body.contrasenia, 10),
                 foto_perfil: req.body.foto_perfil,
                 dni: req.body.dni,
-                fecha_nacimiento: req.body.fecha_nacimiento
-
-            }
+                fecha_nacimiento: req.body.fecha_nacimiento};
 
             user.create(userStore)
                 .then(function (result) {
@@ -121,10 +136,14 @@ const userController = {
                     return res.redirect("/users/login");
                 })
                 .catch(function (error) {
-                    console.log(error)
-                })
-        }
+                    console.log(error);
 
+                });
+            }
+        })
+                .catch(function (error) {
+                    console.log(error);
+                })};
     },
     login: function (req, res) {
         if (req.session.user != undefined) {
